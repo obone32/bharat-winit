@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Harden runner
-      uses: step-security/harden-runner@1d88384fd173af6ecb012dfd0264a306b711241a # v2.22.4
+      uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
       with:
         egress-policy: audit
     - uses: taiki-e/checkout-action@v1
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Harden runner
-        uses: step-security/harden-runner@1d88384fd173af6ecb012dfd0264a306b711241a # v2.22.4
+        uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
         with:
           egress-policy: audit
       - name: Checkout
@@ -45,7 +45,7 @@ jobs:
     timeout-minutes: 30
     steps:
       - name: Harden runner
-        uses: step-security/harden-runner@1d88384fd173af6ecb012dfd0264a306b711241a # v2.22.4
+        uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
         with:
           egress-policy: audit
       - uses: taiki-e/checkout-action@v1
@@ -132,7 +132,7 @@ jobs:
 
     steps:
     - name: Harden runner
-      uses: step-security/harden-runner@1d88384fd173af6ecb012dfd0264a306b711241a # v2.22.4
+      uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
       with:
         egress-policy: audit
     - uses: taiki-e/checkout-action@v1
@@ -142,7 +142,7 @@ jobs:
       # the cache has been downloaded.
       #
       # This could be avoided if we added Cargo.lock to the repository.
-      uses: actions/cache/restore@v5
+      uses: actions/cache/restore@v6
       with:
         # https://doc.rust-lang.org/cargo/guide/cargo-home.html#caching-the-cargo-home-in-ci
         path: |
@@ -163,7 +163,7 @@ jobs:
     - name: Cache cargo-apk
       if: contains(matrix.platform.target, 'android')
       id: cargo-apk-cache
-      uses: actions/cache@v5
+      uses: actions/cache@v6
       with:
         path: ~/.cargo/bin/cargo-apk
         # Change this key if we update the required cargo-apk version
@@ -315,7 +315,7 @@ jobs:
 
     # See restore step above
     - name: Save cache of cargo folder
-      uses: actions/cache/save@v5
+      uses: actions/cache/save@v6
       with:
         path: |
           ~/.cargo/registry/index/
@@ -329,7 +329,7 @@ jobs:
 
     steps:
     - name: Harden runner
-      uses: step-security/harden-runner@1d88384fd173af6ecb012dfd0264a306b711241a # v2.22.4
+      uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
       with:
         egress-policy: audit
     - uses: taiki-e/checkout-action@v1
@@ -347,7 +347,7 @@ jobs:
 
     steps:
       - name: Harden runner
-        uses: step-security/harden-runner@1d88384fd173af6ecb012dfd0264a306b711241a # v2.22.4
+        uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
         with:
           egress-policy: audit
       - uses: taiki-e/checkout-action@v1
@@ -366,7 +366,7 @@ jobs:
 
     steps:
       - name: Harden runner
-        uses: step-security/harden-runner@1d88384fd173af6ecb012dfd0264a306b711241a # v2.22.4
+        uses: step-security/harden-runner@aebdcf6156ab6691adf63218240e476564a1ed4c # v2.23.0
         with:
           egress-policy: audit
       - uses: taiki-e/checkout-action@v1
